@@ -1,12 +1,11 @@
 import 'package:flutter/material.dart';
 
+import 'package:web_sayt/constants/colors.dart';
+import 'package:web_sayt/presentation/desktop/desktopbody.dart';
+import 'package:web_sayt/presentation/mobile/mobilbody.dart';
+import 'package:web_sayt/responsive/responsive_layout.dart';
 
-import 'constants/colors.dart';
-import 'presentation/desktop/desktopbody.dart';
-import 'presentation/mobile/mobilbody.dart';
 import 'presentation/tablet/tabletbody.dart';
-import 'responsive/responsive_layout.dart';
-
 
 class HomePage extends StatefulWidget {
   const HomePage({super.key});
@@ -27,4 +26,3 @@ class _HomePageState extends State<HomePage> {
         ));
   }
 }
-
