@@ -3,8 +3,6 @@ import 'package:flutter_svg/svg.dart';
 
 import '../../constants/colors.dart';
 
-
-
 class ListviewWidget extends StatelessWidget {
   const ListviewWidget({
     super.key,
@@ -12,57 +10,48 @@ class ListviewWidget extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) {
+    double width = MediaQuery.of(context).size.width;
     return Container(
       color: Appcolor.bgColor,
-      height: 325,
       width: MediaQuery.of(context).size.width,
-      child: ListView(
-        physics: const BouncingScrollPhysics(
-            parent: AlwaysScrollableScrollPhysics()),
-        padding: const EdgeInsets.all(26),
-        shrinkWrap: true,
-        scrollDirection: Axis.horizontal,
-        children: [
-          const Padding(
-            padding: EdgeInsets.all(8.0),
-            child: MyCard(
-              title: 'Ethical Investing',
-              imageUrl: 'assets/icons/maximize.svg',
-              title2:
-                  'Debit-free and interst-free earnings. Eran compettitve returns from our investment apportunities.No banks, mortgages or leverage in sight!',
+      child: width > 1200
+          ? Row(
+              mainAxisAlignment: MainAxisAlignment.center,
+              children: List.generate(
+                4,
+                (index) {
+                  return const Padding(
+                    padding: EdgeInsets.all(16.0),
+                    child: MyCard(
+                      title: 'Ethical Investing',
+                      imageUrl: 'assets/icons/maximize.svg',
+                      title2:
+                          'Debit-free and interst-free earnings. Eran compettitve returns from our investment apportunities.No banks, mortgages or leverage in sight!',
+                    ),
+                  );
+                },
+              ),
+            )
+          : SizedBox(
+              height: 300,
+              child: ListView(
+                scrollDirection: Axis.horizontal,
+                children: List.generate(
+                  4,
+                  (index) {
+                    return const Padding(
+                      padding: EdgeInsets.all(16.0),
+                      child: MyCard(
+                        title: 'Ethical Investing',
+                        imageUrl: 'assets/icons/maximize.svg',
+                        title2:
+                            'Debit-free and interst-free earnings. Eran compettitve returns from our investment apportunities.No banks, mortgages or leverage in sight!',
+                      ),
+                    );
+                  },
+                ),
+              ),
             ),
-          ),
-          Padding(
-            padding: const EdgeInsets.all(8.0),
-            child: MyCard(
-              title: 'Transparency',
-              imageUrl: 'assets/icons/maximize.svg',
-              title2:
-                  'Complete transparency offered on all of our investment oporrtunities,returns are paid net of all fees and costs.',
-              child: UnderlineText(
-                  title: 'See our fees here', color: Appcolor.iconColor, onTab: () {  },),
-            ),
-          ),
-          const Padding(
-            padding: EdgeInsets.all(8.0),
-            child: MyCard(
-              title: 'FCA REgulated',
-              imageUrl: 'assets/icons/maximize.svg',
-              title2:
-                  'Yielders is authrised and regulated by the Financial Conduct Authority (FCA).',
-            ),
-          ),
-          const Padding(
-            padding: EdgeInsets.all(8.0),
-            child: MyCard(
-              title: 'Multiple Returns',
-              imageUrl: 'assets/icons/maximize.svg',
-              title2:
-                  'EArnmonthly rental income,plus a share of the total profit upon sale.',
-            ),
-          ),
-        ],
-      ),
     );
   }
 }
@@ -112,7 +101,7 @@ class MyCard extends StatelessWidget {
                 title2,
                 style: const TextStyle(fontSize: 14),
               ),
-              child ?? const Text("")
+              if (child != null) child!,
             ],
           ),
         ),
@@ -128,7 +117,8 @@ class UnderlineText extends StatelessWidget {
   const UnderlineText({
     super.key,
     required this.title,
-    required this.color, required this.onTab,
+    required this.color,
+    required this.onTab,
   });
 
   @override
@@ -143,7 +133,7 @@ class UnderlineText extends StatelessWidget {
         ),
         child: Text(
           title,
-          style: TextStyle(color: color,fontWeight: FontWeight.bold),
+          style: TextStyle(color: color, fontWeight: FontWeight.bold),
         ),
       ),
     );

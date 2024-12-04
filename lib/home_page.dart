@@ -18,11 +18,8 @@ class _HomePageState extends State<HomePage> {
   @override
   Widget build(BuildContext context) {
     return Scaffold(
-        backgroundColor: Appcolor.bgColor,
-        body: const ResponsiveLayout(
-          mobileBody: MobilBody(),
-          desktopBody: DesktopBody(),
-          tabletBody: TabletBody(),
-        ));
+      backgroundColor: Appcolor.bgColor,
+      body: const DesktopBody(),
+    );
   }
 }

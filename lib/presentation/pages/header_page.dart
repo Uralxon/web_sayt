@@ -30,26 +30,36 @@ class HeaderPage extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     return Container(
-      padding: const EdgeInsets.symmetric(horizontal: 36),
-      color: Colors.black12,
+      padding: const EdgeInsets.symmetric(vertical: 50),
+      decoration: const BoxDecoration(
+        image: DecorationImage(
+          image: AssetImage("assets/images/5.jpg"),
+          fit: BoxFit.fill,
+        ),
+      ),
       child: Column(
         mainAxisSize: MainAxisSize.min,
         crossAxisAlignment: CrossAxisAlignment.start,
         children: [
-          const SizedBox(
-            height: 50,
-          ),
-          CarouselSlider(
+          Padding(
+            padding: const EdgeInsets.only(top: 50, bottom: 35),
+            child: CarouselSlider(
               items: headertext,
-              options: CarouselOptions(height: 400,
-                  autoPlayInterval:const Duration(seconds: 5),
-                  autoPlay: true,
-                  aspectRatio: 16 / 9,
-                  enlargeCenterPage: true,
-                  enlargeFactor: 0.5)),
-         
-          const SignUp(),
-          const SizedBox(height: 35,),
+              options: CarouselOptions(
+                height: 300,
+                autoPlayInterval: const Duration(seconds: 5),
+                autoPlay: true,
+                aspectRatio: 16 / 9,
+                enlargeCenterPage: true,
+                enlargeFactor: 0.5,
+              ),
+            ),
+          ),
+          Padding(
+            padding:
+                EdgeInsets.only(left: MediaQuery.of(context).size.width * 0.11),
+            child: const SignUp(),
+          ),
         ],
       ),
     );

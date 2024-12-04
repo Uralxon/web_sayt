@@ -60,65 +60,75 @@ class _TabletBodyState extends State<TabletBody> {
               ))
         ],
       ),
-      endDrawer: Drawer(
-        backgroundColor: Appcolor.iconColor,
-        child: Padding(
-          padding: const EdgeInsets.all(8.0),
-          child: Column(
-            children: [
-              Row(
-                mainAxisAlignment: MainAxisAlignment.end,
-                children: [
-                  IconButton(
-                    onPressed: () {
-                      Navigator.pop(context);
-                    },
-                    icon: const Text(
-                      'X',
-                      style:
-                          TextStyle(fontWeight: FontWeight.bold, fontSize: 25),
-                    ),
-                  )
-                ],
-              ),
-              MyText(
-                title: 'Properties',
-                onTab: () {},
-              ),
-              MyText(
-                title: 'How It Work',
-                onTab: () {},
-              ),
-              MyText(
-                title: 'About Us',
-                onTab: () {},
-              ),
-              MyText(
-                title: 'Knowledge Hub',
-                onTab: () {},
-              ),
-            ],
-          ),
-        ),
-      ),
+      endDrawer: MyDrawer(),
       body: SingleChildScrollView(
         child: Column(
           children: [
             Stack(
               children: [
                 SizedBox(
-                        height: 580,
-                        child: Image.asset(
-                          "assets/images/5.jpg",
-                          fit: BoxFit.cover,
-                        )),
+                    height: 580,
+                    child: Image.asset(
+                      "assets/images/5.jpg",
+                      fit: BoxFit.cover,
+                    )),
                 HeaderPage(),
               ],
             ),
             const ListviewWidget(),
             const HowToWork(),
             const BenefitsPage(),
-            
+          ],
+        ),
+      ),
+    );
+  }
+}
+
+class MyDrawer extends StatelessWidget {
+  const MyDrawer({
+    super.key,
+  });
+
+  @override
+  Widget build(BuildContext context) {
+    return Drawer(
+      backgroundColor: Appcolor.iconColor,
+      child: Padding(
+        padding: const EdgeInsets.all(8.0),
+        child: Column(
+          children: [
+            Row(
+              mainAxisAlignment: MainAxisAlignment.end,
+              children: [
+                IconButton(
+                  onPressed: () {
+                    Navigator.pop(context);
+                  },
+                  icon: const Text(
+                    'X',
+                    style:
+                        TextStyle(fontWeight: FontWeight.bold, fontSize: 25),
+                  ),
+                )
+              ],
+            ),
+            MyText(
+              title: 'Properties',
+              onTab: () {},
+            ),
+            MyText(
+              title: 'How It Work',
+              onTab: () {},
+            ),
+            MyText(
+              title: 'About Us',
+              onTab: () {},
+            ),
+            MyText(
+              title: 'Knowledge Hub',
+              onTab: () {},
+            ),
           ],
         ),
       ),
