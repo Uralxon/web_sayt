@@ -1,6 +1,5 @@
 import 'package:flutter/material.dart';
 import 'package:web_sayt/presentation/pages/benifets.dart';
-import 'package:web_sayt/presentation/tablet/tabletbody.dart';
 import 'package:web_sayt/presentation/widgets/sing_up.dart';
 import 'package:web_sayt/presentation/widgets/underlined_text.dart';
 
@@ -8,6 +7,7 @@ import '../pages/become_a_today.dart';
 import '../pages/header_page.dart';
 import '../pages/how_to_work.dart';
 import '../pages/listview_page.dart';
+import '../widgets/my_drawer.dart';
 
 class DesktopBody extends StatefulWidget {
   const DesktopBody({super.key});
