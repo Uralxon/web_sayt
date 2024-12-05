@@ -2,8 +2,6 @@ import 'package:flutter/material.dart';
 
 import '../../constants/colors.dart';
 
-
-
 class MyText extends StatelessWidget {
   final String title;
   final IconData? icon;

@@ -2,9 +2,6 @@ import 'package:flutter/material.dart';
 import 'package:flutter_svg/svg.dart';
 import 'package:web_sayt/presentation/pages/listview_page.dart';
 
-
-import '../../constants/colors.dart';
-
 class HowToWork extends StatelessWidget {
   const HowToWork({super.key});
 
@@ -12,7 +9,8 @@ class HowToWork extends StatelessWidget {
   Widget build(BuildContext context) {
     return Container(
       width: MediaQuery.of(context).size.width,
-      color: Appcolor.bgColor,
+      padding: const EdgeInsets.symmetric(vertical: 40),
+      color: Colors.grey.shade200,
       child: Column(
         children: [
           const Text(

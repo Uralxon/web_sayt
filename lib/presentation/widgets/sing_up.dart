@@ -2,20 +2,25 @@ import 'package:flutter/material.dart';
 import '../../constants/colors.dart';
 
 class SignUp extends StatelessWidget {
-  const SignUp({
-    super.key,
-  });
+  final bool isSmall;
+  const SignUp({super.key, this.isSmall = false});
 
   @override
   Widget build(BuildContext context) {
     return ElevatedButton(
-      style: ButtonStyle(
-          backgroundColor: WidgetStatePropertyAll(Appcolor.iconColor)),
+      style: ElevatedButton.styleFrom(
+        backgroundColor: Appcolor.iconColor,
+        foregroundColor: Colors.white,
+      ),
       onPressed: () {},
-      child: const Text(
-        'Sign up',
-        style: TextStyle(
-            fontSize: 20, fontWeight: FontWeight.w500, color: Colors.black),
+      child: Padding(
+        padding: EdgeInsets.symmetric(
+            vertical: isSmall ? 5 : 10, horizontal: isSmall ? 10 : 20),
+        child: Text(
+          'Sign up',
+          style: TextStyle(
+              fontSize: isSmall ? 14 : 20, fontWeight: FontWeight.w500),
+        ),
       ),
     );
   }
