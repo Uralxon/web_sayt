@@ -9,14 +9,16 @@ class HiderText extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) {
-    return ListTile(
-      title: Text(
-        title,
-        style:const TextStyle(fontSize: 50, color: Colors.white),
-      ),
-      subtitle: Text(
-        subtitle,
-        style:const TextStyle(fontSize: 20, color: Colors.white),
+    return Card(color:  Colors.black12,
+      child: ListTile(
+        title: Text(
+          title,
+          style:const TextStyle(fontSize: 50, color: Colors.white),
+        ),
+        subtitle: Text(
+          subtitle,
+          style:const TextStyle(fontSize: 20, color: Colors.white),
+        ),
       ),
     );
   }
