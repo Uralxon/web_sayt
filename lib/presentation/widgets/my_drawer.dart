@@ -1,7 +1,10 @@
 import 'package:flutter/material.dart';
+import 'package:web_sayt/presentation/pages/contact_us.dart';
 
 import '../../constants/colors.dart';
+import '../pages/about_us.dart';
 import 'mytext.dart';
+import 'underlined_text.dart';
 
 class MyDrawer extends StatelessWidget {
   const MyDrawer({
@@ -25,27 +28,34 @@ class MyDrawer extends StatelessWidget {
                   },
                   icon: const Text(
                     'X',
-                    style:
-                        TextStyle(fontWeight: FontWeight.bold, fontSize: 25),
+                    style: TextStyle(fontWeight: FontWeight.bold, fontSize: 25),
                   ),
                 )
               ],
             ),
-            MyText(
+            ColorChangingText(
               title: 'Properties',
-              onTab: () {},
+              onTap: () {},
             ),
-            MyText(
-              title: 'How It Work',
-              onTab: () {},
-            ),
-            MyText(
+            ColorChangingText(
               title: 'About Us',
-              onTab: () {},
+              onTap: () {
+                Navigator.push(
+                    context,
+                    MaterialPageRoute(
+                      builder: (context) => const AboutUsPage(),
+                    ));
+              },
             ),
-            MyText(
-              title: 'Knowledge Hub',
-              onTab: () {},
+            ColorChangingText(
+              title: 'Contact Us',
+              onTap: () {
+                Navigator.push(
+                    context,
+                    MaterialPageRoute(
+                      builder: (context) => const ContactUs(),
+                    ));
+              },
             ),
           ],
         ),
