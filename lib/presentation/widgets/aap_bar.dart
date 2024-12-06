@@ -1,4 +1,6 @@
 import 'package:flutter/material.dart';
+import 'package:web_sayt/presentation/pages/about_us.dart';
+import 'package:web_sayt/presentation/pages/contact_us.dart';
 
 import 'sing_up.dart';
 
@@ -33,7 +35,13 @@ class MyAppBar extends StatelessWidget implements PreferredSizeWidget {
                 ),
                 const SizedBox(width: 40),
                 TextButton(
-                  onPressed: () {},
+                  onPressed: () {
+                    Navigator.push(
+                        context,
+                        MaterialPageRoute(
+                          builder: (context) => const AboutUsPage(),
+                        ));
+                  },
                   style: TextButton.styleFrom(foregroundColor: Colors.black),
                   child: const Text(
                     'About Us',
@@ -42,7 +50,11 @@ class MyAppBar extends StatelessWidget implements PreferredSizeWidget {
                 ),
                 const SizedBox(width: 40),
                 TextButton(
-                  onPressed: () {},
+                  onPressed: () { Navigator.push(
+                        context,
+                        MaterialPageRoute(
+                          builder: (context) => const ContactUs(),
+                        ));},
                   style: TextButton.styleFrom(foregroundColor: Colors.black),
                   child: const Text(
                     'Contact Us',

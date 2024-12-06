@@ -5,6 +5,7 @@ import '../pages/header_page.dart';
 import '../pages/how_to_work.dart';
 import '../pages/listview_page.dart';
 import '../widgets/aap_bar.dart';
+import '../widgets/button_aapbar.dart';
 import '../widgets/my_drawer.dart';
 
 class DesktopBody extends StatefulWidget {
@@ -43,7 +44,7 @@ class _DesktopBodyState extends State<DesktopBody> {
                 const HowToWork(),
                 const BenefitsPage(),
                 const BecomeATodayPage(),
-                const BottomAppBar()
+                const MyBottomAppBar()
               ],
             ),
           ),

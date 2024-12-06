@@ -2,8 +2,8 @@ import 'package:flutter/material.dart';
 
 import 'underlined_text.dart';
 
-class BottomAppBar extends StatelessWidget {
-  const BottomAppBar({
+class MyBottomAppBar extends StatelessWidget {
+  const MyBottomAppBar({
     super.key,
   });
 
